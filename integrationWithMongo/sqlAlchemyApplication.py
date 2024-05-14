@@ -120,6 +120,7 @@ with Session(engine) as session:
     for result in session.scalars(stmt_count):
         print(result)
         
+        
     # encerrando de fato a session
     session.closed()
     
