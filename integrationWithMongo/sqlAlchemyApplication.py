@@ -57,3 +57,41 @@ Base.metadata.create_all(engine)
 # print(engine.table_name())
 
 #investigando o esquema de banco de dados 
+inspetor_engine = inspect(engine)
+print(inspetor_engine.has_table("user_account"))
+print(inspetor_engine.get_table_names())
+print(inspetor_engine.default_schema_name)
+
+
+#inserindo dados no banco de dados
+with Session(engine) as session:
+    juliana = User(
+        name = 'Juliana',
+        fullname= 'Juliana Mascarenhas',
+        address=[Address(email_address='julianam"email.com')]
+        
+    )
+    
+    sandy = User(
+        name = 'Sandy',
+        fullname= 'Sandy Cardoso',
+        address=[Address(email_address='sandyam"email.com'),
+                 Address(email_address='sandyc@email.org')]
+    )
+    
+    patrick = User (name='patrick', fullname='Patrick Cardoso')
+    
+    #enviandopara o BD (persistência de dados)
+    sessiom.add_all([juliana, sandy, patrick])
+    
+    session.commit()
+    
+    stmt = select(User).where(User.name.in_(["juliana", 'sandy']))
+    print('Recuperando usuários a partir de condições de filtragem')
+    for user in session.scalars(stmt):
+        print(user)
+        
+    stmt_address = select(Address).where(Address.user_id.in_([2]))
+    print('\nRecuperando os endereços de email de Sandy')
+    for address in session.scallars(stmt_address):
+        print(address)
