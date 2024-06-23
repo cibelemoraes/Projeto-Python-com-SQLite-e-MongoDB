@@ -1,29 +1,32 @@
-Integrando_Python_SQLite__MongoDB
-Integrando Python com SQLite e MongoDB
+# Resumo do Projeto
+## Este projeto integra Python com bancos de dados SQLite e MongoDB utilizando SQLAlchemy para o modelo ORM e pymongo para interação com MongoDB. Abaixo estão as principais funcionalidades e bibliotecas utilizadas.
 
-Entendendo o Desafio
-Agora é a sua hora de brilhar e construir um perfil de destaque na DIO! Explore todos os conceitos explorados até aqui e replique (ou melhore, porque não?) este projeto prático. Para isso, crie seu próprio repositório e aumente ainda mais seu portfólio de projetos no GitHub, o qual pode fazer toda diferença em suas entrevistas técnicas 😎
+## Bibliotecas Utilizadas
+SQLAlchemy: Utilizada para mapear classes Python para tabelas no banco de dados SQLite e gerenciar consultas e transações.
+pymongo: Utilizada para conectar e interagir com o banco de dados MongoDB.
+pprint: Usada para imprimir os dados de forma mais legível.
+### Funcionalidades
+### Modelo ORM com SQLAlchemy:
 
-Neste repositório, insira todos os links e arquivos necessários para seu projeto, seja um arquivo de banco de dados ou um link para o template no Figma.
+Definição de classes Client e Account que representam tabelas no SQLite.
+Criação de tabelas no banco de dados SQLite.
+### Persistência de dados no SQLite.
+Consultas para recuperar dados do SQLite utilizando SQLAlchemy.
+###  Conexão com SQLite:
 
-Dica: Se o expert forneceu um repositório Github, você pode dar um "fork" no repositório dele para organizar suas alterações e evoluções mantendo uma referência direta ao código-fonte original.
+Criação de uma engine para conectar ao banco de dados.
+Sessões para adicionar e manipular registros no banco de dados.
+Execução de consultas para recuperar informações específicas, ordenadas e associadas entre clientes e contas.
+### Conexão com MongoDB:
 
-Parte 1 - Implementando um Banco de Dados Relacional com SQLAlchemy
+###  Criação de uma conexão com o MongoDB utilizando pymongo.
+Definição de documentos representando clientes e suas contas.
+Inserção de múltiplos documentos no MongoDB.
+Consultas para recuperar documentos específicos e realizar filtros e ordenações nos dados armazenados no MongoDB.
 
-Objetivo:
+### Execução
+Para executar a aplicação, basta rodar o script principal: python app.py
 
-Neste desafio você irá implementar uma aplicação de integração com SQLite com base em um esquema relacional disponibilizado. Sendo assim, utilize o esquema dentro do contexto de cliente e conta para criar as classes de sua API. Essas classes irão representar as tabelas do banco de dados relacional dentro da aplicação.
+Este projeto demonstra como integrar Python com bancos de dados SQL e NoSQL, permitindo manipulação e consulta de dados de maneira eficiente e organizada.
 
-image
-
-Entregável:
-
-Aplicação com a definição do esquema por meio das classes usando SQLAlchemy Inserção de um conjunto de dados mínimo para manipulação das informações Execução de métodos de recuperação de dados via SQLAlchemy
-
-Parte 2 – Implementando um Banco de Dados NoSQL com Pymongo
-
-Você irá implementar um banco NoSQL com mongodb para fornecer uma visão agregada do modelo relacional. Sendo assim, as informações de cliente e contas existentes estão contidas dentro de documentos de acordo com cliente.
-
-Execute as operações:
-
-Conecte ao mongo atlas e crie um banco de dados Defina uma coleção bank para criar os documetos de clientes Insira documentos com a estrutura mencionada Escreve instruções de recuperação de informações com base nos pares de chave e valor como feito em aula
+Projeto realizado por Cibele Gomes Domingos Moraes Lima 
